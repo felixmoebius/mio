@@ -21,12 +21,12 @@ pub use self::epoll::{Events, Selector};
 
 #[cfg(any(target_os = "bitrig", target_os = "dragonfly",
           target_os = "freebsd", target_os = "ios", target_os = "macos",
-          target_os = "netbsd", target_os = "openbsd"))]
+          target_os = "netbsd", target_os = "openbsd", target_os = "unikraft"))]
 mod kqueue;
 
 #[cfg(any(target_os = "bitrig", target_os = "dragonfly",
           target_os = "freebsd", target_os = "ios", target_os = "macos",
-          target_os = "netbsd", target_os = "openbsd"))]
+          target_os = "netbsd", target_os = "openbsd", target_os = "unikraft"))]
 pub use self::kqueue::{Events, Selector};
 
 mod awakener;
