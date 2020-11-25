@@ -7,7 +7,8 @@ pub mod dlsym;
     target_os = "android",
     target_os = "illumos",
     target_os = "linux",
-    target_os = "solaris"
+    target_os = "solaris",
+    target_os = "unikraft"
 ))]
 mod epoll;
 
@@ -15,18 +16,19 @@ mod epoll;
     target_os = "android",
     target_os = "illumos",
     target_os = "linux",
-    target_os = "solaris"
+    target_os = "solaris",
+    target_os = "unikraft"
 ))]
 pub use self::epoll::{Events, Selector};
 
 #[cfg(any(target_os = "bitrig", target_os = "dragonfly",
           target_os = "freebsd", target_os = "ios", target_os = "macos",
-          target_os = "netbsd", target_os = "openbsd", target_os = "unikraft"))]
+          target_os = "netbsd", target_os = "openbsd"))]
 mod kqueue;
 
 #[cfg(any(target_os = "bitrig", target_os = "dragonfly",
           target_os = "freebsd", target_os = "ios", target_os = "macos",
-          target_os = "netbsd", target_os = "openbsd", target_os = "unikraft"))]
+          target_os = "netbsd", target_os = "openbsd"))]
 pub use self::kqueue::{Events, Selector};
 
 mod awakener;
