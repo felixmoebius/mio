@@ -277,7 +277,8 @@ impl UnixReady {
         target_os = "android",
         target_os = "illumos",
         target_os = "linux",
-        target_os = "solaris"
+        target_os = "solaris",
+        target_os = "unikraft"
     ))]
     pub fn priority() -> UnixReady {
         UnixReady(ready_from_usize(PRI))
@@ -408,7 +409,8 @@ impl UnixReady {
         target_os = "android",
         target_os = "illumos",
         target_os = "linux",
-        target_os = "solaris"
+        target_os = "solaris",
+        target_os = "unikraft"
     ))]
     pub fn is_priority(&self) -> bool {
         self.contains(ready_from_usize(PRI))
