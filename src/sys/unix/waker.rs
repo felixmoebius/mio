@@ -1,4 +1,4 @@
-#[cfg(any(target_os = "linux", target_os = "android"))]
+#[cfg(any(target_os = "linux", target_os = "android", target_os = "unikraft"))]
 mod eventfd {
     use crate::sys::Selector;
     use crate::{Interest, Token};
@@ -58,7 +58,7 @@ mod eventfd {
     }
 }
 
-#[cfg(any(target_os = "linux", target_os = "android"))]
+#[cfg(any(target_os = "linux", target_os = "android", target_os = "unikraft"))]
 pub use self::eventfd::Waker;
 
 #[cfg(any(target_os = "freebsd", target_os = "ios", target_os = "macos"))]
