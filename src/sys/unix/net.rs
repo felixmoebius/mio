@@ -20,7 +20,8 @@ pub(crate) fn new_socket(domain: libc::c_int, socket_type: libc::c_int) -> io::R
         target_os = "illumos",
         target_os = "linux",
         target_os = "netbsd",
-        target_os = "openbsd"
+        target_os = "openbsd",
+        target_os = "unikraft"
     ))]
     let socket_type = socket_type | libc::SOCK_NONBLOCK | libc::SOCK_CLOEXEC;
 
@@ -97,7 +98,8 @@ pub(crate) fn socket_addr(addr: &SocketAddr) -> (SocketAddrCRepr, libc::socklen_
                     target_os = "ios",
                     target_os = "macos",
                     target_os = "netbsd",
-                    target_os = "openbsd"
+                    target_os = "openbsd",
+                    target_os = "unikraft"
                 ))]
                 sin_len: 0,
             };
@@ -121,7 +123,8 @@ pub(crate) fn socket_addr(addr: &SocketAddr) -> (SocketAddrCRepr, libc::socklen_
                     target_os = "ios",
                     target_os = "macos",
                     target_os = "netbsd",
-                    target_os = "openbsd"
+                    target_os = "openbsd",
+                    target_os = "unikraft"
                 ))]
                 sin6_len: 0,
                 #[cfg(any(target_os = "solaris", target_os = "illumos"))]
