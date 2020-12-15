@@ -161,7 +161,12 @@ pub fn new() -> io::Result<(Sender, Receiver)> {
         }
     }
 
-    #[cfg(any(target_os = "ios", target_os = "macos", target_os = "solaris"))]
+    #[cfg(any(
+        target_os = "ios",
+        target_os = "macos",
+        target_os = "solaris",
+        target_os = "unikraft"
+    ))]
     unsafe {
         // For platforms that don't have `pipe2(2)` we need to manually set the
         // correct flags on the file descriptor.

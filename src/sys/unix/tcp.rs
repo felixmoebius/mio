@@ -429,7 +429,8 @@ pub fn accept(listener: &net::TcpListener) -> io::Result<(net::TcpStream, Socket
         target_os = "illumos",
         target_os = "linux",
         target_os = "netbsd",
-        target_os = "openbsd"
+        target_os = "openbsd",
+        target_os = "unikraft"
     ))]
     let stream = {
         syscall!(accept4(
